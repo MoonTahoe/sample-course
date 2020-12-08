@@ -3,20 +3,17 @@ name: Build Teachers Edition
 
 on:
   push:
-    paths:
-      - "teacher-edition/**"
     workflow_dispatch:
 jobs:
   makepdfs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: mkrakowitzer/actions-makepdfs@master
-        if: github.ref == 'refs/heads/main'
-        with:
-          markdown_dir: doc
-          output_dir: tmp
+      - name: Install Dependencies
+        run: npm install
+      - name: Build PDF
+        run: npm run build
       - uses: actions/upload-artifact@v1
         with:
-          name: platform-architecture-docs
-          path: tmp
+          name: teacher-edition
+          path: build
