@@ -1,0 +1,25 @@
+{
+  "name": "sample-course",
+  "version": "0.0.0",
+  "description": "A playground for building PDFs",
+  "main": "index.js",
+  "scripts": {
+    "test": "asciidoctor-web-pdf --version",
+    "build": "asciidoctor-web-pdf teacher-edition/basic-example.adoc -D build",
+    "preview": "open teachers-edition.pdf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoonTahoe/sample-course.git"
+  },
+  "author": "Alex Banks",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/MoonTahoe/sample-course/issues"
+  },
+  "homepage": "https://github.com/MoonTahoe/sample-course#readme",
+  "devDependencies": {
+    "@asciidoctor/core": "^2.2.1",
+    "asciidoctor-pdf": "^1.0.0-alpha.11"
+  }
+}
